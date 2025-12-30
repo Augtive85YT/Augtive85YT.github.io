@@ -1,4 +1,1 @@
-# Hello! I'm August! Welcome to my website!
-## [Home](\home.html)
-
-## [Requester](\requester.html)
+# Just a website to host general things for me.
