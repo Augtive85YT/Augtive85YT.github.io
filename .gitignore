@@ -3,11 +3,6 @@
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-
+*.code-workspace
 .history/
-
-**/credintials.json
-**/client_secrets.json
-**/client_secret.json
-
 **/README.md
