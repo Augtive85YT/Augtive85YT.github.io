@@ -5,33 +5,26 @@
 </head>
 <body>
 <script>
-window.addEventListener('message', (event) => {
+window.addEventListener("message", (event) => {
   const data = event.data;
   if (!data || !data.action) return;
-  switch(data.action) {
-    case "store":
-      localStorage.setItem(data.key, data.value);
-      event.source.postMessage(
-        {status: "stored", key: data.key},
-        event.origin
-      );
-      break;
-    
-    case "get":
-      const value = localStorage.getItem(data.key) || null;
-      event.source.postMessage(
-        {status: "retrieved", key: data.key, value},
-        event.origin
-      );
-      break;
-    
-    case "clear":
-      localStorage.removeItem(data.key);
-      event.source.postMessage(
-        {status: "cleared", key: data.key},
-        event.origin
-      );
-      break;
+
+  if (data.action === "store") {
+    localStorage.setItem(data.key, data.value);
+  }
+
+  if (data.action === "get") {
+    const value = localStorage.getItem(data.key);
+    event.source.postMessage({
+      status: 'retrieved',
+      key: data.key,
+      value,
+      requestId: data.requestId
+    }, event.origin);
+  }
+
+  if (data.action === "clear") {
+    localStorage.removeItem(data.key);
   }
 });
 </script>
