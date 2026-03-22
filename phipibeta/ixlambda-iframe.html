@@ -1,24 +1,8 @@
+<script>
+document.open();
+document.write(`
 <!doctype HTML>
 <html>
-<style>
-iframe.goog-te-banner-frame, iframe.goog-te-menu-frame { display: none !important; }
-body { top: 0 !important; position: static !important; }
-</style>
-<script>
-  function killGoogleTranslate() {
-    document.querySelectorAll(
-      "iframe.goog-te-banner-frame, iframe.goog-te-menu-frame, .goog-te-spinner-pos, .goog-tooltip, #goog-gt-tt"
-    ).forEach(e => e.remove());
-    document.documentElement.style.top = '0px';
-    document.body.style.top = '0px';
-    document.body.style.position = 'static';
-    document.body.classList.remove('translated-ltr', 'translated-rtl');
-  }
-  new MutationObserver(killGoogleTranslate).observe(document.documentElement, {
-    childList: true,
-    subtree: true
-  });
-</script>
 <head>
   <title>IXLAMBDA INFO PAGE</title>
 </head>
@@ -27,3 +11,6 @@ body { top: 0 !important; position: static !important; }
   <p>:3 :3 :3</p>
 </body>
 </html>
+`);
+document.close();
+</script>
