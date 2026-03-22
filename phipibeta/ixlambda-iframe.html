@@ -12,11 +12,7 @@ var htmlData = `
 </body>
 </html>
 `;
-function rewriteHTML() {
-  document.open();
-  document.write(htmlData);
-  document.close();
-}
-rewriteHTML();
-setTimeout(document.write(htmlData), 1000);
+document.open();
+document.write(htmlData);
+document.close();
 </script>
