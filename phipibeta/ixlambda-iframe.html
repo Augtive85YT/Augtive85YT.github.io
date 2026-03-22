@@ -1,5 +1,5 @@
 <script>
-object.addEventListener("load", { document.open();
+document.addEventListener("load", (function () { document.open();
 document.write(`
 <!doctype HTML>
 <html>
@@ -12,5 +12,5 @@ document.write(`
 </body>
 </html>
 `);
-document.close(); });
+document.close(); })());
 </script>
