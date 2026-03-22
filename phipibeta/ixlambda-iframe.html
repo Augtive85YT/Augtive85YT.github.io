@@ -12,16 +12,7 @@ var htmlData = `
 </body>
 </html>
 `;
-var observer = new MutationObserver(() => {
-  if (document.querySelector("#gt-nvframe")) {
-    document.open();
-    document.write(htmlData);
-    document.close();
-    observer.disconnect();
-  }
-});
-observer.observe(document, {
-  childList: true,
-  subtree: true
-});
+document.open();
+document.write(htmlData);
+document.close();
 </script>
